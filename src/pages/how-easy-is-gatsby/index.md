@@ -1,6 +1,6 @@
 ---
 title: How Easy is Gatsby
-date: '2019-03-12'
+date: '2019-03-14'
 spoiler: It isn't hard to get started with Gatsby.
 ---
 
