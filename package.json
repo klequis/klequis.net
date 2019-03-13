@@ -1,11 +1,11 @@
 {
-  "name": "klequis-blog",
+  "name": "klequis",
   "private": true,
   "description": "klequis' blog",
   "version": "1.0.0",
-  "author": "Carl Becker (klequis) <carl.@trivalleycoders.com>",
+  "author": "klequis <klequis@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gaearon/overreacted.io/issues"
+    "url": "https://github.com/klequis/klequis.net/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.76",
@@ -32,8 +32,8 @@
     "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
     "prismjs": "^1.15.0",
-    "react": "^16.8.0-alpha.0",
-    "react-dom": "^16.8.0-alpha.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
@@ -45,7 +45,7 @@
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2"
   },
-  "homepage": "",
+  "homepage": "https://klequis.net",
   "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
@@ -55,7 +55,7 @@
     "start": "npm run develop",
     "build": "rm -rf public && rm -rf .cache && gatsby build",
     "now-build": "gatsby build",
-    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) overreacted.io",
+    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) klequis.net",
     "dry": "yarn build && cp now.json public/ && cd public && now"
   },
   "husky": {

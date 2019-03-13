@@ -16,8 +16,8 @@ import {
   loadFontsForCode,
 } from '../utils/i18n';
 
-const GITHUB_USERNAME = 'gaearon';
-const GITHUB_REPO_NAME = 'overreacted.io';
+const GITHUB_USERNAME = 'klequis';
+const GITHUB_REPO_NAME = 'klequis.net';
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`;
@@ -67,16 +67,20 @@ class Translations extends React.Component {
               ))}
             </span>
           )}
-          {lang !== 'en' && lang !== 'ru' && (
+          {lang !== 'en' && (
             <>
               <br />
               <br />
-              <Link to={languageLink('en')}>Read the original</Link>
-              {' • '}
-              <a href={editUrl} target="_blank" rel="noopener noreferrer">
-                Improve this translation
-              </a>
-              {' • '}
+              {lang !== 'ru' && (
+                <>
+                  <Link to={languageLink('en')}>Read the original</Link>
+                  {' • '}
+                  <a href={editUrl} target="_blank" rel="noopener noreferrer">
+                    Improve this translation
+                  </a>
+                  {' • '}
+                </>
+              )}
               <Link to={`/${lang}`}>View all translated posts</Link>{' '}
             </>
           )}
@@ -126,8 +130,9 @@ class BlogPostTemplate extends React.Component {
       1,
       enSlug.length - 1
     )}/index${lang === 'en' ? '' : '.' + lang}.md`;
+    // TODO: This is likely not the right url any more
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-      `https://overreacted.io${enSlug}`
+      `https://klequis${enSlug}`
     )}`;
 
     return (
@@ -201,7 +206,7 @@ class BlogPostTemplate extends React.Component {
               }}
               to={'/'}
             >
-              Overreacted
+              klequis
             </Link>
           </h3>
           <Bio />
@@ -217,7 +222,11 @@ class BlogPostTemplate extends React.Component {
             >
               <li>
                 {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
+                  <Link
+                    to={previous.fields.slug}
+                    rel="prev"
+                    style={{ marginRight: 20 }}
+                  >
                     ← {previous.frontmatter.title}
                   </Link>
                 )}
