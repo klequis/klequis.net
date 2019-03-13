@@ -139,7 +139,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,
         display: `minimal-ui`,
-        icon: `src/assets/icon.png`,
+        icon: `src/assets/cb.png`,
         theme_color_in_head: false,
       },
     },

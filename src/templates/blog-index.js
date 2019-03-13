@@ -31,7 +31,7 @@ class BlogIndexTemplate extends React.Component {
                 <header>
                   <h3
                     style={{
-                      fontFamily: 'Montserrat, sans-serif',
+                      // fontFamily: 'Montserrat, sans-serif',
                       fontSize: rhythm(1),
                       marginBottom: rhythm(1 / 4),
                     }}
