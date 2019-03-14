@@ -6,13 +6,11 @@ spoiler: I didn't find the doc to tell the whole story and I wanted to go beyond
 
 This is my first full post with the new blog platform and things need some help.
 
-## Resources
+After following the [directions for adding TypeScript to Create React App](https://reactjs.org/docs/static-type-checking.html#adding-typescript-to-a-project) there seemed room for improvement. I got some initial errors. I also wanted to add some things that I'm used to using when working on non-TypeScript projects. The below is notes on my journey, somewhat organized like a tutorial, but not fully vetted as such yet (today 12-Mar-19).
 
-- https://piotrwitek.github.io/react-redux-typescript-guide/#fcspreadattributes
+> It seems odd that Create React App puts dev dependencies in 'depenencies' and not 'devDependencies' in package.json. For an explanation see [comment by gaearon](https://github.com/facebook/create-react-app/issues/1764#issuecomment-285082921)
 
-It seems odd that Create React App puts dev dependencies in 'depenencies' and not 'devDependencies' in package.json. For an explanation see [comment by gaearon](https://github.com/facebook/create-react-app/issues/1764#issuecomment-285082921)
-
-I got over 30 warnings when using Yarn to add TypeScript and related type definitions. Most worrisome of them was a message about packages being removed because they were not installed by me. Since I generally use [npm]() anyway, I switched to npm and got no warnings.
+Not sure if I did something wrong but I got over 30 warnings when using Yarn to add TypeScript and related type definitions my project. Most worrisome of them was a message about packages being removed because they were not installed by me. Since I generally use [npm]() anyway, I switched to npm and got no warnings.
 - This same error happens if you use npm immediately following npx create-react-app --typescript. To get around this, delete both /node_modules and yarn.lock before running any npm commands.
 
 The below is from Create React App [documentation](https://facebook.github.io/create-react-app/docs/adding-typescript), except that it deletes yarn.lock & node_modules and reinstalls using npm.
@@ -140,7 +138,7 @@ mv App.test.js App.test.tsx
 ```
 
 ## Current project structure
-<picture Selection_046>
+<picture Selection_04g>
 
 ## Run it
 ```js
@@ -199,8 +197,10 @@ npm start
 Create another component and import it with an absolute reference
 1. create folder src/ui/Hello
 1. in Hello create files Hello.tsx & index.ts
-**Hello.tsx**
+
 ```js
+// Hello.tsx
+
 import React from 'react'
 
 const Hello = () => {
@@ -209,13 +209,16 @@ const Hello = () => {
 
 export default Hello
 ```
-**index.ts**
+
 ```js
+// index.ts
 export { default } from './Hello'
 ```
 
-Modify App.tsx
+Modify
 ```js
+// App.tsx
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -267,3 +270,7 @@ The cure is to rename Hello/index.ts to index.tsx
 "exclude": [
     "src/serviceWorker.js"
   ]
+
+## Resources
+
+- https://piotrwitek.github.io/react-redux-typescript-guide/#fcspreadattributes
