@@ -18,6 +18,12 @@ body.dark {
   -webkit-font-smoothing: antialiased;
 
   --bg: #282c35;
+  /* --bg: #24272f; */
+  /* --bg: #20232a; */
+  /* --bg: #1c1e25; */
+  /* --bg: #181a1f; */
+  /* --bg: #14161a; */
+  /* --bg: #101115; */
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: #ffffff;
@@ -147,76 +153,153 @@ pre[class*='language-'] ::selection {
   white-space: normal;
 }
 
+/* HTML: attributes */
 .token.attr-name {
   color: rgb(173, 219, 103);
   font-style: italic;
+  /* color: red; */
 }
 
+/* JS:HTML comment */
 .token.comment {
-  color: rgb(128, 147, 147);
+  /* color: rgb(128, 147, 147); */
+  color: #627e99;
+  /* color: red; */
 }
 
-.token.string,
+/* anything in quotes */
+.token.string {
+  color: #99a647;
+  /* color: red; */
+}
+
+/* ? */
 .token.url {
-  color: rgb(173, 219, 103);
+  /* color: rgb(173, 219, 103); */
+  color: #568bbf;
+  /* color: red; */
 }
 
+/* ? */
 .token.variable {
-  color: rgb(214, 222, 235);
+  /* color: rgb(214, 222, 235); */
+  color: #8b56bf;
+  /* color: red; */
 }
 
+/* numbers */
 .token.number {
-  color: rgb(247, 140, 108);
+  /* color: rgb(247, 140, 108); */
+  color: #6288b0;
+  /* color: red; */
 }
 
-.token.builtin,
-.token.char,
-.token.constant,
-.token.function {
+/* start - previously one style */
+.token.builtin {
+  /* ? */
   color: rgb(130, 170, 255);
+  /* color: red; */
 }
 
+/* ? */
+.token.char {
+  color: rgb(130, 170, 255);
+  /* color: red; */
+}
+
+/* UPPERCASE CONSTANTS */
+.token.constant {
+  color: rgb(130, 170, 255);
+  /* color: red; */
+}
+
+/* name of function */
+.token.function {
+  color: #ca6824;
+  /* color: red; */
+}
+/* end - previously one style */
+
+/* HTML:CSS:JS: {, }, (, ),  */
 .token.punctuation {
-  /* color: rgb(199, 146, 234); */
-  color: rgb(28, 160, 134);
+  /* color: rgb(199, 146, 234); Dan */
+  /* color: rgb(28, 160, 134); */
+  color: #cbd6e2;
+  /* color: red; */
 }
 
-.token.selector,
+/* CSS: selector */
+.token.selector {
+  color: #bf568b;
+  /* color: red; */
+}
+
+/* HTML: DOCTYPE */
 .token.doctype {
-  /* color: rgb(199, 146, 234); */
-  color: rgb(28, 160, 134);
+  /* color: rgb(199, 146, 234); Dan*/
+  /* color: rgb(28, 160, 134); */
+  color: #bf568b;
   font-style: 'italic';
+  /* color: red; */
 }
 
+/* name of a js class */
 .token.class-name {
-  /* color: rgb(255, 203, 139); */
-  color: rgb(28, 160, 134);
+  color: #ff0000;
+  /* color: red; */
 }
 
-.token.tag,
-.token.operator,
+/* HTML: h1, div, img, etc */
+.token.tag {
+  color: #6288b0;
+  /* color: red; */
+}
+
+/* +, =, </, <, >, => */
+.token.operator {
+  color: orange;
+  /* color: red; */
+}
+
+/* var, let, const, function, return, import, from, class, extends */
 .token.keyword {
-  /* color: #ffa7c4; */
-  color: rgb(28, 160, 134);
+  color: #95729f;
+  /* color: red; */
 }
 
+/* JS: true, false */
 .token.boolean {
   /* color: rgb(255, 88, 116); */
-  color: rgb(28, 160, 134);
+  /* color: rgb(28, 160, 134); */
+  color: #bfbf56;
 }
 
+/* CSS: property name */
 .token.property {
-  color: rgb(128, 203, 196);
+  /* color: rgb(128, 203, 196); */
+  color: #8bbf56;
+  /* color: red; */
 }
 
+/* not using yet */
 .token.namespace {
   color: rgb(178, 204, 214);
+  /* color: red; */
 }
 
 pre[data-line] {
   padding: 1em 0 1em 3em;
   position: relative;
 }
+
+/* Inline code */
+/* :not(pre) > code[class*='language-'] {
+  border-radius: 0.3em;
+  background: var(--inlineCode-bg);
+  color: var(--inlineCode-text);
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+} */
 
 .gatsby-highlight-code-line {
   background-color: hsla(207, 95%, 15%, 1);
@@ -234,6 +317,13 @@ pre[data-line] {
   margin-right: -1.3125rem;
   border-radius: 10px;
   background: #011627;
+  background: #001323;
+  background: #00111f;
+  background: #000f1b;
+  background: #000d17;
+  /* background: #000b13; */
+  /* background: #00080f; */
+  /* background: #232323; */
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }

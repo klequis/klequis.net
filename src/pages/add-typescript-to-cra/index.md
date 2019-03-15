@@ -15,6 +15,63 @@ Not sure if I did something wrong but I got over 30 warnings when using Yarn to 
 
 The below is from Create React App [documentation](https://facebook.github.io/create-react-app/docs/adding-typescript), except that it deletes yarn.lock & node_modules and reinstalls using npm.
 
+
+Prism test
+```js
+
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
++ import Hello from '../Hello'
+
+function getName = (id) => {
+  return 'name'
+}
+
+
+class App extends Component {
+
+  onClick = (param) => {
+    return 1
+  }
+  render() {
+    // Test stuff
+    var a = 1
+    let b = 2
+    const c = 3
+    const d = true
+    const name = 'me'
+
+
+    return (
+      <div className="App">
+        <img src='http://my.com' />
+        <header className='App-header'>
++         <Hello />
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+```
+
+
 ## Create the app
 ```js
 npx create-react-app adding-typescript --typescript
@@ -226,9 +283,16 @@ import './App.css';
 
 class App extends Component {
   render() {
+    // Test stuff
+    var a = 1
+    let b = 2
+    const c = 3
+    const d = true
+
     return (
       <div className="App">
-        <header className="App-header">
+        <img src='http://my.com' />
+        <header className='App-header'>
 +         <Hello />
           <img src={logo} className="App-logo" alt="logo" />
           <p>
