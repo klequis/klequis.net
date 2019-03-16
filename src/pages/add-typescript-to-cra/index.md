@@ -19,6 +19,18 @@ The below is from Create React App [documentation](https://facebook.github.io/cr
 npx create-react-app adding-typescript --typescript
 ```
 
+## Eject
+Ejecting the project will allow you to see all files and folders in your project as well as all packages being used. Much of this is hidden by Create React App before ejecting. I have not tried using the project without ejecting but see no reason why this would not work.
+
+```js
+// from project root
+npm run eject
+```
+
+Here is a comparison of what the project looks like after ejecting vs the final project. Don't make any changes yet, the project will evolve as you follow the steps that follow.
+<img src="after-eject-compare.png" alt="comparison after ejecting" />
+
+
 ## Swith out Yarn for npm
 As mentioned, I got over 30 warnings when I tried to use Yarn so I swapped it out form npm and got no warnings.
 ```js
@@ -42,20 +54,21 @@ git commit -m 'switched to npm'
 ```
 
 ## Install TypeScript and related type definitions
+Even though we used the `--typescript` flag with Create React App, you need to add TypeScript yourself. You will also want to add several TypeScript definition files as listed below.
 ```js
-npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+npm i -S typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
 ## Rename src/index.js to src/index.tsx
+When using TypeScript, React files need a `.tsx` extension.
 ```js
-cd src
-mv index.js index.tsx
+
+mv src/index.js src/index.tsx
 ```
 
 
-**TO DO:** things got messed up here with being in the work directory
-
 ## Quick test
+Run a quick test. In the browser, everthing should look the same as last time you ran it.
 ```js
 npm start
 ```
@@ -68,39 +81,17 @@ git add .
 git commit -m 'typescript added'
 ```
 
-**TO DO:** hoping the below is not actually needed
-
-## Commit changes
-Running the app added a couple of files
-```js
-git add .
-git commit -m 'after first run'
-```
-
-**TO DO** why am I ejecting?
-
-
-
-## Eject
-?? Eject so you can see all packages in package.json
-```js
-// from project root
-npm run eject
-```
-
-## Commit changes
-
-```js
-git add .
-git commit -m 'after eject'
-```
-
 ## Add Enzyme and realted packages
+We will be using Enzyme for writing tests. Execute the below command to add all the related packages
 ```js
 npm i -D enzyme enzyme-adapter-react-16 jest-environment-enzyme jest-enzyme @types/enzyme @types/enzyme-adapter-react-16
 ```
 
-## Make the following changes in package.json
+## Add configuration for Jest & Enzyme
+Make the following changes in package.json. You can read more about these changes
+- here
+- here
+
 Under 'jest'
 ```json
 "jest": {
