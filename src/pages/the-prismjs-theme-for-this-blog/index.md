@@ -1,18 +1,24 @@
 ---
-title: PrismJS Theme
+title: The PrismJS Theme for this Blog
 date: '2019-03-14'
-spoiler: Documentation of my Gatsby blog setup for PRISM syntax highlighting.
+spoiler: Documentation of the PRISM syntax highlighting theme for this blog.
 ---
 
 This article is more documentation and links on using PRISM with Gatsby and not intended as a how-to.
-
 
 This blog is using [PRISM](https://prismjs.com) for code syntax highlighting. PRISM is a very well know syntax highlighter. You most likely have visited many sites that are using it. If you are building a React site and would like to use it, one good solution is [react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter).
 
 This blog is also made with [Gatsby](https://www.gatsbyjs.org/) which requires Gatsby specific plug-ins to make use of PRISM. All posts/articles are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). You can read more about the setup at [gatsby-remark-prismjs](https://www.npmjs.com/package/gatsby-remark-prismjs).
 
-The main challenge for me was getting a syntax color theme I like and and figuring out how to implement it. I'm not sure I am 100% satisfied with the color theme, it is mostly like VS Code's Monokai Dimmed
+The main challenge for me was getting a syntax color theme I like and and figuring out how to implement it. I'm not sure I am 100% satisfied with the color theme, it is mostly like VS Code's Monokai Dimmed. You can see the completed CSS for the theme [here](https://github.com/klequis/klequis.net/blob/master/src/utils/global.css).
 
+As I may have mentioned previously, the blog is based on [Overreacted.io](https://overreacted.io/). I made a copy of the reposity and modified it to my liking. The CSS uses the `global.css` file from Overreacted as a starting point mostly just changing colors.
+
+Part of what I needed to learn was which selector effected which parts of the HTML, CSS, JS & JSX. I was unable to find documentation for this.
+
+I got a bit stuck for a while because I didn't realize/know that JSX code blocks would need a 'jsx' tag and not a 'js' tag. I have added a good amout of comments to the CSS selectors that start with `token` to note what they will effect.
+
+The rest of this post is the code blocks I used for testing the syntax highlighting.
 
 
 # Prism test
