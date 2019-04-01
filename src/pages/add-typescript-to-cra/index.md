@@ -4,6 +4,43 @@ date: '2019-03-12'
 spoiler: I didn't find the doc to tell the whole story and I wanted to go beyond the basic implementation to something more like my non-TypeScript starter template.
 ---
 
+There are different ways to get started with Raact and TypesScript.
+
+You can follow the directions on [the React documents site](https://reactjs.org/docs/static-type-checking.html#typescript) which offers two options, 1) using Create React App, 2) Doing it manually. The latter method probably isn't what you want since it doesn't include Webpack or other build system.
+
+When using Create React App the instructions seem to say, to me at least, just do
+
+```js
+$ npx create-react-app my-app-name --typescript
+```
+
+I wondered how this modified the generic/straight Create React App so I did ...
+
+```js
+$ npx create-react-app cra-straight
+$ cd cra-straight
+$ yarn eject
+// then
+$ npx create-react-app cra-typescript --typescript
+$ cd cra-typescript
+$ yarn eject
+```
+... and then compared the two projects using [Meld](http://meldmerge.org/)
+
+The comparison showed no difference. cra-typescript didn't even have the typescript package in package.json, so I'm not sure what is going on here. Maybe my mistake.
+
+Next I used TypeScript Starter as a base to modify cra-typescript
+
+```js
+$ cp -r cra-typescript cra-add-typescript
+```
+
+
+
+# ********
+# OLDER
+# ********
+
 After following the [directions for adding TypeScript to Create React App](https://reactjs.org/docs/static-type-checking.html#adding-typescript-to-a-project) there seemed room for improvement. I got some initial errors and I also wanted to add some things that I'm used to using when working on non-TypeScript projects. The below is notes on my journey, somewhat organized like a tutorial, but not fully vetted as such yet (today 12-Mar-19).
 
 > It seems odd that Create React App puts dev dependencies in 'depenencies' and not 'devDependencies' in package.json. For an explanation see [comment by gaearon](https://github.com/facebook/create-react-app/issues/1764#issuecomment-285082921).
@@ -108,8 +145,13 @@ Under 'jest'
 ```
 
 
+## tsconfig.json
+`tsconfig.json`, as the name implies, is used to configure TypeScript.
 
-
+```js
+// in project root
+touch tsconfig.json
+```
 
 ```js
 - "jsx": "es5"
@@ -309,6 +351,8 @@ The cure is to rename Hello/index.ts to index.tsx
 ## Resources
 
 - https://piotrwitek.github.io/react-redux-typescript-guide/#fcspreadattributes
+
+- https://basarat.gitbooks.io/typescript/content/docs/project/compilation-context.html
 
 ## Appendix
 ## Starter vs. Create React App
