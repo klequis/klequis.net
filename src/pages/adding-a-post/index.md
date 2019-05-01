@@ -1,8 +1,10 @@
 ---
-title: Adding a post
+title: 1. Adding a post
 date: '2019-03-12'
 spoiler: Here is how to add a post.
 ---
+
+#One
 
 This is me documenting how to add a new post to the site. There isn't much to it.
 

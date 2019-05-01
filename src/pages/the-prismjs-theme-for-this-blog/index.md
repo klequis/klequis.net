@@ -1,8 +1,10 @@
 ---
-title: The PrismJS Theme for this Blog
+title: 7. The PrismJS Theme for this Blog
 date: '2019-03-14'
 spoiler: Documentation of the PRISM syntax highlighting theme for this blog.
 ---
+
+#6
 
 This article is more documentation and links on using PRISM with Gatsby and not intended as a how-to.
 

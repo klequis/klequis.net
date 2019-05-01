@@ -1,8 +1,10 @@
 ---
-title: Adding TypeScript to Create React App
+title: 3. Adding TypeScript to Create React App
 date: '2019-03-12'
 spoiler: I didn't find the doc to tell the whole story and I wanted to go beyond the basic implementation to something more like my non-TypeScript starter template.
 ---
+
+#3
 
 There are different ways to get started with Raact and TypesScript.
 

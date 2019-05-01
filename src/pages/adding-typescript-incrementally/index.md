@@ -4,10 +4,19 @@ date: '2019-04-01'
 spoiler: Don't know yet
 ---
 
-> This isn't go to go well
+> This all went well until I tried to use `react-jss`. Problems are detailed below. Decided to start with new CRA --typescript project and restart this post.
 
-> __April fools__
+**Strategy**
+- make functioning minimal app without TypeScript
+- add TypeScript one module at a time starting with the UI
+- use `any` for dependant types or when type is unknown until you figure it out.
 
+
+**Thought**
+TypeScript is gogin to be another do you really need it especially for smaller projects type of debate. I'm never fond of that type of debate. As far as I can see so far, TypeScript makes you think hard about your code and thereby write better code. So no, you don't need it for smaller projects but it can make you could better. I think that is a decision to make. It is possible that adding types will add to your development time, and we are all usually short on time, but it may not add time. So no hard and fast rule - decide.
+
+**Thought**
+If I get really deep into TypeScript am I no longer a JavaScript developer? I don't know the answer to that.
 
 <hr/>
 
@@ -484,12 +493,72 @@ export function requestsReducer (
 
 ### `src/redux/requests/selectors.ts`
 
-What is next
 
 
 
+> Found an error in `src/redux/request/reducers.ts`. The param `state` was of type `null` which caused an error when the app launched and before the first request had been set. Need to change this to `state = {}`.
 
 
+## Adding `react-jss`
+
+Using `react-jss` with Typescript requires `react-jss` version 10 or higher.
+
+
+It is a fast moving world. Things change.
+
+For some reason, using destructuring syntax no longer worked. It produced a TypeScript error
+
+```js
+const { classes } = props
+```
+**This syntax requires an imported helper but module 'tslib' cannot be found.ts(2354)**
+
+However, things worked in a new CRA app.
+
+Trying different fixes
+
+Changed `tsconfig.json`. Incorporated settings from new CRA --typescript app into project.
+
+Replaced both `/config` and `/scripts` with same folders fro mnew CRA --typescript project.
+
+Next error
+**Error: Cannot find module 'react-dev-utils/chalk'**
+
+```js
+npm i -D react-dev-utils@
+```
+This installed an older version of `react-dev-utils` so just copied in the correct version to `package.json`.
+
+Change
+```json
+"react-dev-utils": "^5.0.3",
+```
+to
+```json
+"react-dev-utils": "^8.0.0",
+```
+
+Next error
+**Error: Cannot find module 'pnp-webpack-plugin'**
+
+Copy into `package.json` from new CRA --typescript
+```json
+"pnp-webpack-plugin": "1.2.1",
+```
+
+Next error
+**Error: Cannot find module 'terser-webpack-plugin'**
+Copy into `package.json` from new CRA --typescript
+
+```json
+"pnp-webpack-plugin": "1.2.1",
+```
+
+Next error **ugg**
+
+**Error: Cannot find module 'mini-css-extract-plugin'**
+
+> I'm going to stop here. It seems my version of CRA is significantly different from the current version. Therefore, I'm going to migrate my code over to a new CRA app and see how that works.
 
 
 
